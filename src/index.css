@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --glass-bg: rgba(255, 255, 255, 0.78);
+    --glass-border: rgba(255, 255, 255, 0.65);
+    --glass-shadow: 0 8px 32px 0 rgba(27, 67, 50, 0.08);
+    --glass-blur: 16px;
+    
+    --brand-dark-forest: #1b4332;
+    --brand-forest: #2d6a4f;
+    --brand-emerald: #40916c;
+    --brand-mint: #52b788;
+    --brand-light-mint: #74c69d;
+    --brand-soft-mint: #d8f3dc;
+    --brand-bg: #f0fbf5;
+  }
+
+  body {
+    background-color: #f6faf7;
+    background-image: 
+      radial-gradient(at 15% 10%, rgba(82, 183, 136, 0.12) 0px, transparent 55%),
+      radial-gradient(at 85% 25%, rgba(116, 198, 157, 0.1) 0px, transparent 50%),
+      radial-gradient(at 50% 90%, rgba(216, 243, 220, 0.25) 0px, transparent 60%);
+    background-attachment: fixed;
+    color: #1c1917;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Liquid Glass Utilities */
+.glass-panel {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.68) 100%);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 8px 32px 0 rgba(27, 67, 50, 0.06), inset 0 1px 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.glass-panel-elevated {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.75) 100%);
+  backdrop-filter: blur(20px) saturate(190%);
+  -webkit-backdrop-filter: blur(20px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 12px 40px -4px rgba(27, 67, 50, 0.1), inset 0 1px 2px 0 rgba(255, 255, 255, 0.95);
+}
+
+.glass-panel-emerald {
+  background: linear-gradient(135deg, rgba(240, 251, 245, 0.92) 0%, rgba(232, 245, 236, 0.72) 100%);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(82, 183, 136, 0.35);
+  box-shadow: 0 10px 36px -4px rgba(45, 106, 79, 0.12), inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.9);
+}
+
+.glass-panel-dark {
+  background: linear-gradient(135deg, rgba(27, 67, 50, 0.96) 0%, rgba(15, 46, 33, 0.94) 100%);
+  backdrop-filter: blur(20px) saturate(190%);
+  -webkit-backdrop-filter: blur(20px) saturate(190%);
+  border: 1px solid rgba(116, 198, 157, 0.28);
+  box-shadow: 0 16px 48px -8px rgba(11, 43, 30, 0.4), inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Glass Inputs */
+.input-glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(82, 183, 136, 0.3);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.input-glass:focus {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: #40916c;
+  box-shadow: 0 0 0 3px rgba(82, 183, 136, 0.25);
+  outline: none;
+}
+
+/* Glass Buttons */
+.btn-glass-primary {
+  background: linear-gradient(135deg, #2d6a4f 0%, #1b4332 100%);
+  border: 1px solid rgba(116, 198, 157, 0.4);
+  box-shadow: 0 4px 14px 0 rgba(27, 67, 50, 0.25), inset 0 1px 1px 0 rgba(255, 255, 255, 0.35);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-glass-primary:hover {
+  background: linear-gradient(135deg, #40916c 0%, #1b4332 100%);
+  box-shadow: 0 6px 20px 0 rgba(27, 67, 50, 0.35), inset 0 1px 1px 0 rgba(255, 255, 255, 0.45);
+  transform: translateY(-1px);
+}
+
+.btn-glass-primary:active {
+  transform: translateY(0.5px);
+}
+
+.btn-glass-secondary {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(82, 183, 136, 0.35);
+  color: #1b4332;
+  box-shadow: 0 2px 8px 0 rgba(27, 67, 50, 0.05);
+  transition: all 0.2s ease;
+}
+
+.btn-glass-secondary:hover {
+  background: rgba(240, 251, 245, 0.95);
+  border-color: #52b788;
+  color: #0b2b1e;
+  transform: translateY(-1px);
+}
+
+/* Specular Shimmer Effect */
+@keyframes specular-pulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+.animate-specular {
+  animation: specular-pulse 4s ease-in-out infinite;
+}
+
+/* Smooth Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(240, 251, 245, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(82, 183, 136, 0.35);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(64, 145, 108, 0.6);
+}

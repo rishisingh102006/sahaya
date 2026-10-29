@@ -1,0 +1,6 @@
+{
+  "name": "Sahaya — Senior Citizen & NGO Welfare Portal",
+  "description": "Centralized digital platform connecting senior citizens with NGOs, volunteers, emergency support, and government welfare schemes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
